@@ -1,0 +1,12 @@
+<div ng-controller="MessageController as ctrl" >
+	<div class="modal-header">
+	  <h3>{{ctrl.modalOptions.headerText}}</h3>
+	</div>
+	<div class="modal-body" style="background-color:{{ctrl.modalOptions.color}}">
+	  <p>{{ctrl.modalOptions.bodyText}}</p>
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn" 
+	          data-ng-click="ctrl.modalOptionsTemp.close()">Fermer</button>
+	</div>
+</div>

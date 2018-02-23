@@ -1,4 +1,4 @@
-App.controller('EnseignantController', ['$scope','$uibModal','EnseignantService', function ($scope,$uibModal,EnseignantService) {
+App.controller('EnseignantController', ['$scope','$uibModal','$rootScope','EnseignantService', function ($scope,$uibModal,$rootScope,EnseignantService) {
 	var self = this;
 
     self.settings = {
@@ -45,16 +45,7 @@ App.controller('EnseignantController', ['$scope','$uibModal','EnseignantService'
     self.edit = edit;
     self.remove = remove;
     self.ajouterDiv=false;
-    self.reset = reset;
-    self.errors = {
-                        classe: "panel panel-default error_classe_hidden",
-                        msg: "",
-                        trues:true
-                     }
-    self.valider = {
-                        classe: "panel panel-default valider_classe_hidden",
-                        msg: ""
-                    }    
+    self.reset = reset;  
     self.fetchall=fetchAllEnseignant();
     
     
@@ -125,15 +116,21 @@ App.controller('EnseignantController', ['$scope','$uibModal','EnseignantService'
                 function (errResponse) {
                     console.error('Error while creating User');
                 }
+            )
+            .catch(
+                notif("Enseignant","Enseignant déja exist","red")
             );
     }
 
     function supprimerEnseignant(code){
     	Promise.resolve(EnseignantService.deleteEnseignant(code)).then(function(){
     		fetchAllEnseignant();
-    		self.valider.msg = "Formation bien supprimer";
+            notif("Enseignant","Enseignant bien supprimer","green");
     		self.notification(true);
-    	});
+    	})
+        .catch(
+            notif("Enseignant","Enseignant utilisé dans d'autre table","red")
+            );
     }
 
 
@@ -142,13 +139,11 @@ App.controller('EnseignantController', ['$scope','$uibModal','EnseignantService'
             .then(function(value) {
             if(value.length === 0){
             	createEnseignant(self.enseignant);
-            	self.notification(true);
-                self.valider.msg = "Enseignant bien ajouter";
+            	notif("Enseignant","Enseignant bien ajouter","green");
                 reset();
             }
             else{
-            	self.notification(false);
-                self.errors.msg = "mail déja exist";
+            	notif("Enseignant","mail déja exist","red");
             }
             });
             
@@ -159,9 +154,11 @@ App.controller('EnseignantController', ['$scope','$uibModal','EnseignantService'
     	self.modalInstance.close();
     	fetchAllEnseignant();
         self.getEnseignantmail(form.emailPerso);
-        self.notification(true);
-        self.valider.msg = "Enseignant bien modifier";
-    	});
+        notif("Enseignant","Enseignant bien modifier","green");
+    	})
+        .catch(
+            notif("Enseignant","Les informations incorrect","red")
+            );
     }
 
     function remove(id) {
@@ -187,20 +184,22 @@ App.controller('EnseignantController', ['$scope','$uibModal','EnseignantService'
                      };
         $scope.myForm.$setPristine();
     }
-    
-    self.notification= function(a){
-    	if(a){
-    		self.errors.classe = "panel panel-default error_classe_hidden";
-            self.valider.classe = "panel panel-default valider_classe";
-    	}
-    	else{
-    		self.valider.classe = "panel panel-default valider_classe_hidden";
-            self.errors.classe = "panel panel-default error_classe";
-    	}
-    }
-    
-    self.notificationClose=function(){
-    		self.errors.classe = "panel panel-default error_classe_hidden";
-            self.valider.classe = "panel panel-default valider_classe_hidden";
+
+    function notif(titre,msg,color){
+            self.modalOptions={
+                                                headerText:titre,
+                                                bodyText:msg,
+                                                color:color
+                                              }
+                            $rootScope.modalOptions=self.modalOptions;
+
+                            self.modalOptionsTemp = $uibModal.open({
+                                             scope:$scope,
+                                             templateUrl: 'html/error/notificationError.html',
+                                             controller: 'MessageController',
+                                             controllerAs: 'ctrl',
+                                             size: 'lg'
+                                             })
+                            $rootScope.modalOptionsTemp=self.modalOptionsTemp;
     }
 }]);

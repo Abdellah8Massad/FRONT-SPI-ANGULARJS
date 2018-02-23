@@ -1,4 +1,4 @@
-App.controller('FormationController', ['$scope','$uibModal','FormationService', function ($scope,$uibModal,FormationService) {
+App.controller('FormationController', ['$scope','$rootScope','$uibModal','FormationService', function ($scope,$rootScope,$uibModal,FormationService) {
 	var self = this;
 
     self.settings = {
@@ -95,7 +95,24 @@ App.controller('FormationController', ['$scope','$uibModal','FormationService', 
                 function (errResponse) {
                     console.error('Error while creating User');
                 }
-            );
+            )
+            .catch(function(){
+                            self.modalOptions={
+                                                headerText:"Error Formation",
+                                                bodyText:"les informations saisie incorrect",
+                                                color:"red"
+                                              }
+                            $rootScope.modalOptions=self.modalOptions;
+
+                            self.modalOptionsTemp = $uibModal.open({
+                                             scope:$scope,
+                                             templateUrl: 'html/error/notificationError.html',
+                                             controller: 'MessageController',
+                                             controllerAs: 'ctrl',
+                                             size: 'lg'
+                                             })
+                            $rootScope.modalOptionsTemp=self.modalOptionsTemp;
+            });
     }
 
     function supprimerFormation(code){
@@ -105,7 +122,24 @@ App.controller('FormationController', ['$scope','$uibModal','FormationService', 
                 self.valider.classe = "panel panel-default valider_classe";
                 self.valider.msg = "Formation bien supprimer";
     			
-    	});
+    	})
+        .catch(function(){
+                            self.modalOptions={
+                                                headerText:"Error Formation",
+                                                bodyText:"Formation utilisé dans d'autre table",
+                                                color:"red"
+                                              }
+                            $rootScope.modalOptions=self.modalOptions;
+
+                            self.modalOptionsTemp = $uibModal.open({
+                                             scope:$scope,
+                                             templateUrl: 'html/error/notificationError.html',
+                                             controller: 'MessageController',
+                                             controllerAs: 'ctrl',
+                                             size: 'lg'
+                                             })
+                            $rootScope.modalOptionsTemp=self.modalOptionsTemp;
+        });
     }
 
     function submit(){
@@ -113,16 +147,39 @@ App.controller('FormationController', ['$scope','$uibModal','FormationService', 
             .then(function(value) {
             if(value.length === 0){
                 createFormation(self.formation);
-                self.errors.classe = "panel panel-default error_classe_hidden";
-                self.valider.classe = "panel panel-default valider_classe";
-                self.valider.msg = "Formation bien ajouter";
+                self.modalOptions={
+                                                headerText:"Formation",
+                                                bodyText:"Formation bien ajouter",
+                                                color:"green"
+                                              }
+                            $rootScope.modalOptions=self.modalOptions;
+
+                            self.modalOptionsTemp = $uibModal.open({
+                                             scope:$scope,
+                                             templateUrl: 'html/error/notificationError.html',
+                                             controller: 'MessageController',
+                                             controllerAs: 'ctrl',
+                                             size: 'lg'
+                                             })
+                            $rootScope.modalOptionsTemp=self.modalOptionsTemp;
                 reset();
             }
             else{
-                self.valider.classe = "panel panel-default valider_classe_hidden";
-                self.errors.classe = "panel panel-default error_classe";
-                self.errors.msg = "Formation déja exist";
-                console.error('Formation déja exist : ' + self.errors.classe);
+                self.modalOptions={
+                                                headerText:"Error Formation",
+                                                bodyText:"Formation déja exist",
+                                                color:"red"
+                                              }
+                            $rootScope.modalOptions=self.modalOptions;
+
+                            self.modalOptionsTemp = $uibModal.open({
+                                             scope:$scope,
+                                             templateUrl: 'html/error/notificationError.html',
+                                             controller: 'MessageController',
+                                             controllerAs: 'ctrl',
+                                             size: 'lg'
+                                             })
+                            $rootScope.modalOptionsTemp=self.modalOptionsTemp;
             }
             });
             
@@ -132,9 +189,21 @@ App.controller('FormationController', ['$scope','$uibModal','FormationService', 
     	Promise.resolve(createFormation(form)).then(function() {
         fetchAllFormation();
         self.getFormation(form.nomFormation);
-        self.errors.classe = "panel panel-default error_classe_hidden";
-        self.valider.classe = "panel panel-default valider_classe";
-        self.valider.msg = "Formation bien modifier";
+        self.modalOptions={
+                                                headerText:"Formation",
+                                                bodyText:"Formation bien modifier",
+                                                color:"green"
+                                              }
+                            $rootScope.modalOptions=self.modalOptions;
+
+                            self.modalOptionsTemp = $uibModal.open({
+                                             scope:$scope,
+                                             templateUrl: 'html/error/notificationError.html',
+                                             controller: 'MessageController',
+                                             controllerAs: 'ctrl',
+                                             size: 'lg'
+                                             })
+                            $rootScope.modalOptionsTemp=self.modalOptionsTemp;
     	});
     }
 

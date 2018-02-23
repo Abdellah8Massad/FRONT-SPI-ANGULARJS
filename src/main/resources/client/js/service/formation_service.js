@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').factory('FormationService', ['$http', '$q', function ($http, $q) {
+angular.module('myApp').factory('FormationService', ['$http', '$uibModal', '$q', function ($http,$uibModal, $q) {
 
     var REST_SERVICE_URI = 'http://localhost:8090/formation/';
 
