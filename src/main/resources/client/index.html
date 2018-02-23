@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Front end SPI</title>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/Board.css">
+</head>
+
+<body ng-app="myApp">
+
+<div id="wrapper">
+  <nav role="navigation" id="access">
+    <ul id="menu">
+      <li class="active"><a class="icon-home" href="#!index">index</a></li>
+      <li><a class="icon-picture" href="#!formation">Formation</a></li>
+      <li><a class="icon-picture" href="#!enseignant">Enseignant</a></li>
+      <li><a class="icon-picture" href="#!candidat">Candidat</a></li>
+      <li><a class="icon-picture" href="#!promotion">Promotion</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div ng-view="">
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="node_modules/angular-utils-pagination/dirPagination.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+<script src="./js/app.js"></script>
+<script src="./js/service/formation_service.js"></script>
+<script src="./js/service/enseignant_service.js"></script>
+<script src="./js/service/admin_service.js"></script>
+<script src="./js/service/candidat_service.js"></script>
+<script src="./js/controller/formation_controller.js"></script>
+<script src="./js/controller/admin_controller.js"></script>
+<script src="./js/controller/enseignant_controller.js"></script>
+<script src="./js/controller/candidat/candidatAdd_controller.js"></script>
+<script src="./js/controller/candidat/candidatEdit_controller.js"></script>
+<script src="./js/controller/candidat/candidatListe_controller.js"></script>
+
+<script>
+;(function($) {
+    "use strict";
+    $(document).ready(function() {
+        $('#access').on('touchstart click', '.skip-link', function(event) {
+            $(this).toggleClass('focus');
+            $($(this).attr('href')).toggleClass('target');
+            event.preventDefault();
+        }).find('.skip-link').append('<span>'+$('#menu .active').text()+'</span>');
+    });
+})(jQuery);
+
+</script>
+</body>
+</html>

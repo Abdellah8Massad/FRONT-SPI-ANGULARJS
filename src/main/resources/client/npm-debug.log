@@ -1,0 +1,86 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'angular-route@X.Y.Z' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 verbose cache add [ 'angular-route@X.Y.Z', null ]
+6 verbose cache add name=undefined spec="angular-route@X.Y.Z" args=["angular-route@X.Y.Z",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'angular-route@X.Y.Z',
+7 verbose parsed url   path: 'angular-route@X.Y.Z',
+7 verbose parsed url   href: 'angular-route@X.Y.Z' }
+8 verbose cache add name="angular-route" spec="X.Y.Z" args=["angular-route","X.Y.Z"]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'X.Y.Z',
+9 verbose parsed url   path: 'X.Y.Z',
+9 verbose parsed url   href: 'X.Y.Z' }
+10 verbose addNamed [ 'angular-route', 'X.Y.Z' ]
+11 verbose addNamed [ null, null ]
+12 silly lockFile 1946613a-angular-route-X-Y-Z angular-route@X.Y.Z
+13 verbose lock angular-route@X.Y.Z C:\Users\DOSI\AppData\Roaming\npm-cache\1946613a-angular-route-X-Y-Z.lock
+14 info addNameTag [ 'angular-route', 'X.Y.Z' ]
+15 verbose request where is /angular-route
+16 verbose request registry https://registry.npmjs.org/
+17 verbose request id c1be05baf065f5e4
+18 verbose url raw /angular-route
+19 verbose url resolving [ 'https://registry.npmjs.org/', './angular-route' ]
+20 verbose url resolved https://registry.npmjs.org/angular-route
+21 verbose request where is https://registry.npmjs.org/angular-route
+22 info trying registry request attempt 1 at 02:12:55
+23 http GET https://registry.npmjs.org/angular-route
+24 http 200 https://registry.npmjs.org/angular-route
+25 silly registry.get cb [ 200,
+25 silly registry.get   { 'content-type': 'application/json; charset=UTF-8',
+25 silly registry.get     server: 'UploadServer',
+25 silly registry.get     'cache-control': 'max-age=300',
+25 silly registry.get     'last-modified': 'Fri, 2 Feb 2018 13:16:00 GMT',
+25 silly registry.get     etag: '"5a746490-196c1"',
+25 silly registry.get     'x-npm-region': 'EU-Central',
+25 silly registry.get     'content-encoding': 'gzip',
+25 silly registry.get     'content-length': '11408',
+25 silly registry.get     'accept-ranges': 'bytes',
+25 silly registry.get     date: 'Wed, 21 Feb 2018 01:12:54 GMT',
+25 silly registry.get     via: '1.1 varnish',
+25 silly registry.get     age: '14304',
+25 silly registry.get     connection: 'keep-alive',
+25 silly registry.get     'x-served-by': 'cache-ams4420-AMS',
+25 silly registry.get     'x-cache': 'HIT',
+25 silly registry.get     'x-cache-hits': '1',
+25 silly registry.get     'x-timer': 'S1519175575.959168,VS0,VE1',
+25 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+26 silly lockFile 1946613a-angular-route-X-Y-Z angular-route@X.Y.Z
+27 silly lockFile 1946613a-angular-route-X-Y-Z angular-route@X.Y.Z
+28 error notarget No compatible version found: angular-route@'X.Y.Z'
+28 error notarget Valid install targets:
+28 error notarget ["1.2.17-build.163.1","1.3.0-rc.5","1.3.0","1.3.1","1.3.2","1.3.3","1.3.4-build.3588","1.2.27","1.3.4","1.3.5","1.3.6","1.3.7","1.2.28","1.3.8","1.4.0-beta.0","1.3.9","1.3.10","1.4.0-beta.1","1.4.0-beta.2","1.3.11","1.4.0-beta.3","1.3.12","1.3.13","1.4.0-beta.4","1.3.14","1.4.0-beta.5","1.4.0-beta.6","1.3.15","1.4.0-rc.0","1.4.0-rc.1","1.4.0-rc.2","1.4.0","1.3.16","1.4.1","1.4.2","1.3.17","1.4.3","1.4.4","1.3.18","1.4.5","1.3.19","1.4.6","1.5.0-beta.0","1.2.29","1.3.20","1.4.7","1.5.0-beta.2","1.4.8","1.5.0-rc.0","1.5.0-rc.1","1.4.9","1.5.0-rc.2","1.5.0","1.5.1","1.4.10","1.5.2","1.5.3","1.5.5","1.4.11","1.5.6","1.4.12","1.5.7","1.2.30","1.5.8","1.4.13","1.2.31","1.2.32","1.4.14","1.6.0-rc.0","1.6.0-rc.1","1.5.9","1.6.0-rc.2","1.6.0","1.5.10","1.6.1","1.5.11","1.6.2","1.6.3","1.6.4","1.6.5","1.6.6","1.6.7","1.6.8","1.6.9"]
+28 error notarget
+28 error notarget This is most likely not a problem with npm itself.
+28 error notarget In most cases you or one of your dependencies are requesting
+28 error notarget a package version that doesn't exist.
+29 error System Windows_NT 6.1.7601
+30 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "angular-route@X.Y.Z"
+31 error cwd C:\Users\DOSI\Documents\Project Socle 0 spring\spi-base-2018\src\main\resources\client
+32 error node -v v0.10.32
+33 error npm -v 1.4.28
+34 error code ETARGET
+35 verbose exit [ 1, true ]

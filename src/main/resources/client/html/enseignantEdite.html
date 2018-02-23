@@ -1,0 +1,134 @@
+
+        <div class="panel-heading"><span class="lead">Details formation</span></div>
+         <div class="formcontainer">
+            
+            <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="noEnseignant">Code</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.noEnseignant" id="noEnseignant"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[0-9]{1,4}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="sexe">Sexe</label>
+                        <div class="col-md-7">
+                            <select required class="form-control input-sm" id="sexe" ng-model="ctrl.detail.sexe">
+              							  <option value="H">HOMME</option>
+              							  <option value="F">FEMME</option>
+              							</select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="nom">Nom</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.nom" id="nom"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,8}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="prenom">Prenom</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.prenom" id="prenom"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,8}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="telephone">telephone</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.telephone" id="telephone"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[0-9]{1,10}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="mobile">mobile</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.mobile" id="mobile"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[0-9]{1,10}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="type">type</label>
+                        <div class="col-md-7">
+                            <select required class="form-control input-sm" id="type" ng-model="ctrl.detail.type">
+                              <option value="INT">Intervenant-Extérieur</option>
+                              <option value="MCF">Maître de Conférences</option>
+                              <option value="PR">Professeur des Universités</option>
+                              <option value="PRAG">Professeur Agrégé</option>
+                              <option value="PRAST">Professionnel Associé</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="adresse">adresse</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.adresse" id="adresse"
+                                   class="title form-control input-sm"
+                                   required
+                                   />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="codePostal">codePostal</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.codePostal" id="codePostal"
+                                   class="title form-control input-sm"
+                                    required
+                                   pattern="[0-9]{1,8}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="ville">ville</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.ville" id="ville"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,8}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="pays">pays</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.detail.pays" id="pays"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,8}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="emailPerso">Email personel</label>
+                        <div class="col-md-7">
+                            <input type="email" ng-model="ctrl.detail.emailPerso" id="emailPerso"
+                                   class="title form-control input-sm"
+                                   required/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="emailUbo">Email UBO</label>
+                        <div class="col-md-7">
+                            <input type="email" ng-model="ctrl.detail.emailUbo" id="emailUbo"
+                                   class="title form-control input-sm"
+                                   required/>
+                        </div>
+                    </div>
+
+                </div>
+                   
+                <div class="row">  
+                        <button type="button"  ng-click="ctrl.edit(ctrl.detail)" class="btn btn-success custom-width">Modifier
+                        </button>
+                        <button type="button"  ng-click="ctrl.modalInstance.dismiss('close')" class="btn btn-success custom-width">close
+                        </button>
+                </div>
+             </div> 
+        </div>

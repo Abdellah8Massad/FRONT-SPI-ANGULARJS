@@ -1,0 +1,42 @@
+<div class="main-section" ng-controller="AdminController as ctrl">
+		<div class="dashbord">
+			<div class="icon-section">
+				<i class="fa fa-users" aria-hidden="true"></i><br>
+				<small>Enseignants</small>
+				<p>{{ ctrl.enseignant }}</p>
+			</div>
+			<div class="detail-section">
+				<a href="#!enseignant">More Info </a>
+			</div>
+		</div>
+		<div class="dashbord dashbord-green">
+			<div class="icon-section">
+				<i class="fa fa-users" aria-hidden="true"></i><br>
+				<small>Candidats</small>
+				<p>{{ ctrl.candidat }}</p>
+			</div>
+			<div class="detail-section">
+				<a href="#!candidat">More Info </a>
+			</div>
+		</div>
+		<div class="dashbord dashbord-blue">
+			<div class="icon-section">
+				<i class="fa fa-tasks" aria-hidden="true"></i><br>
+				<small>Formation</small>
+				<p>{{ ctrl.formation }}</p>
+			</div>
+			<div class="detail-section">
+				<a href="#!formation">More Info </a>
+			</div>
+		</div>
+		<div class="dashbord dashbord-red">
+			<div class="icon-section">
+				<i class="fa fa-graduation-cap" aria-hidden="true"></i><br>
+				<small>Promotion</small>
+				<p>{{ ctrl.promotion     }}</p>
+			</div>
+			<div class="detail-section">
+				<a href="#!promotion">More Info </a>
+			</div>
+		</div>
+	</div>

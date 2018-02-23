@@ -1,0 +1,124 @@
+<div class="panel panel-default" ng-controller="CandidatEditController as ctrl">
+
+        <div class="panel-heading"><span class="lead">Details formation</span></div>
+         <div class="formcontainer">
+            
+            <div class="row">
+            		<div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="sexe">Sexe</label>
+                        <div class="col-md-7">
+                           <select required class="form-control input-sm" id="sexe" ng-model="ctrl.candidat.sexe">
+                                          <option value="M">HOMME</option>
+                                          <option value="F">FEMME</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="nom">Nom</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.nom" id="nom"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,8}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="prenom">Prenom</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.prenom" id="prenom"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,8}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="dateNaissance">date de naissance</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.dateNaissance" id="dateNaissance"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="lieuNaissance">lieu de naissance</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.lieuNaissance" id="lieuNaissance"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,8}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="nationalite">nationalite</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.nationalite" id="nationalite"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,10}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="paysOrigine">pays d'origine</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.paysOrigine" id="paysOrigine"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,10}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="ville">ville</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.ville" id="ville"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,10}"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="email">email</label>
+                        <div class="col-md-7">
+                           <input type="email" ng-model="ctrl.candidat.email" id="email"
+                                   class="title form-control input-sm"
+                                   required/> 
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="adresse">adresse</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.candidat.adresse" id="adresse"
+                                   class="title form-control input-sm"
+                                   required/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="anneeUniversitaire">annee universitaire</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.anneeUniversitaire" id="anneeUniversitaire"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2 control-lable" for="universiteOrigine">universite d'origine</label>
+                        <div class="col-md-7">
+                           <input type="text" ng-model="ctrl.candidat.universiteOrigine" id="universiteOrigine"
+                                   class="title form-control input-sm"
+                                   required
+                                   pattern="[A-Za-z]{1,8}"/>
+                        </div>
+                    </div>
+                </div>
+                   
+                <div class="row">  
+                        <button type="button"  ng-click="ctrl.edit(ctrl.candidat)" class="btn btn-success custom-width">Modifier
+                        </button>
+                        <button type="button"  ng-click="ctrl.retourner()" class="btn btn-success custom-width">close
+                        </button>
+                </div>
+             </div> 
+        </div>
+
+</div>

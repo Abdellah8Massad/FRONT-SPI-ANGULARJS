@@ -1,0 +1,60 @@
+<div class="panel panel-default">
+    	<div class="panel-heading"><span class="lead">Details formation</span></div>
+    	<div class="tablecontainer">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>code formation</th>
+                    <th>debut accreditation</th>
+                    <th>diplome</th>
+                    <th>double diplome</th>
+                    <th>fin accreditation</th>
+                   <!-- <th>num annee</th> --> 
+                    <th>nom formation</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="u in ctrl.detail ">
+                
+                    <td><span class="form-control input-sm" ng-bind="u.codeFormation" ></span></td>
+                    <td><input  type="text" class="form-control input-sm" 
+                    value="u.debutAccreditation" 
+                    ng-model="u.debutAccreditation"
+                    pattern="[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"/></td>
+                    <td>
+                    <select required class="form-control input-sm" ng-model="u.diplome">
+							  <option value="L">Licence</option>
+							  <option value="M">Master</option>
+							  <option value="D">Doctorat</option>
+					</select>
+					</td>
+                   <td>
+                    <select required class="form-control input-sm" ng-model="u.doubleDiplome">
+							  <option value="O">Oui</option>
+							  <option value="N">Non</option>
+					</select>
+                   </td>
+                    <td><input  type="input" class="form-control input-sm" value="u.finAccreditation" 
+                    ng-model="u.finAccreditation"
+                    pattern="[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"/></td>
+                 <!--   <td>
+                   <select required class="form-control input-sm">
+                   			  <option value="u.n0Annee" disabled selected>{{u.n0Annee}}</option>
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+				   </select>
+                   </td> -->
+                    <td><input  type="text" class="form-control input-sm" value="u.nomFormation" ng-model="u.nomFormation"/></td>
+                    <td>
+                        <button type="button"  ng-click="ctrl.edit(u)" class="btn btn-success custom-width">Modifier
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <button type="button"  ng-click="ctrl.modalInstance.close()" class="btn btn-success custom-width">close
+                        </button>
+</div>
